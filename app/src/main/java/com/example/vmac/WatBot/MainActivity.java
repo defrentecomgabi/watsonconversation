@@ -345,11 +345,13 @@ public class MainActivity extends AppCompatActivity {
     private void recordMessage() {
         //mic.setEnabled(false);
         speechService = new SpeechToText();
+
         speechService.setUsernameAndPassword(STT_username, STT_password);
         myLogger.info("--> gravando mensagem!");
 
 
         if(listening != true) {
+            //streamPlayer.playStream(textToSpeech.synthesize("Olá. Como posso te ajudar?", Voice.PT_ISABELA).execute());
             capture = microphoneHelper.getInputStream(true);
             new Thread(new Runnable() {
                 @Override public void run() {
@@ -463,6 +465,9 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             });
+
+                            streamPlayer = new StreamPlayer();
+                            streamPlayer.playStream(textToSpeech.synthesize(text, Voice.PT_ISABELA).execute());
                         }
                         catch(Exception e){
                            e.printStackTrace();
