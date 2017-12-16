@@ -3,7 +3,11 @@ package com.example.vmac.WatBot;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Picture;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.PictureDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -137,15 +141,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         inputMessage = (EditText) findViewById(R.id.message);
+        inputMessage.setVisibility(View.INVISIBLE);
+
         btnSend = (ImageButton) findViewById(R.id.btn_send);
+        btnSend.setVisibility(View.INVISIBLE);
         btnRecord= (ImageButton) findViewById(R.id.btn_record);
         String customFont = "Montserrat-Regular.ttf";
         Typeface typeface = Typeface.createFromAsset(getAssets(), customFont);
         inputMessage.setTypeface(typeface);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        Drawable backgroud = recyclerView.getBackground();
+        Log.e("LOG", "Background: " + "wololo");
+        //findViewById(R.id.recycler_view)
+        //LinearLayout  linearLayout = (LinearLayout) findViewById(R.id.linearLayoutid);
+        //linearLayout.setBackgroundResource(R.drawable.background_fingerboard);
 
         messageArrayList = new ArrayList<>();
         mAdapter = new ChatAdapter(messageArrayList);
+
         microphoneHelper = new MicrophoneHelper(this);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -153,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        recyclerView.setVisibility(View.INVISIBLE);
         this.inputMessage.setText("");
         this.initialRequest = true;
         sendMessage();
