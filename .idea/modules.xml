@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/chatbot-watson-android-master.iml" filepath="$PROJECT_DIR$/chatbot-watson-android-master.iml" />
+      <module fileurl="file://C:\App\HackatonGetnet\watsonconversation\app\app.iml" filepath="C:\App\HackatonGetnet\watsonconversation\app\app.iml" />
+      <module fileurl="file://C:\App\HackatonGetnet\watsonconversation\chatbot-watson-android-master.iml" filepath="C:\App\HackatonGetnet\watsonconversation\chatbot-watson-android-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/watsonconversation.iml" filepath="$PROJECT_DIR$/watsonconversation.iml" />
     </modules>
   </component>
 </project>
